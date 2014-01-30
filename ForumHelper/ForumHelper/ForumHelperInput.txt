@@ -1,0 +1,4 @@
+40
+2
+http://forums.academy.telerik.com/,,\d{1,2}.second.{0,1}(?=\<)|\d{1,2}.minute.{0,1}(?=\<)|\d{0,2}.hour.{0,1}(?=\<)|(?<=points-data.{1}>)[-+0-9,]*|(?<=qa-netvote-count-data.{1}>)[-+0-9,]*|(?<=activity-count-data.{1}>)[0-9,]*(?=</SPAN>\s*users)|(?<=activity-count-data.{1}>)[0-9,]*(?=</SPAN>\s*comments)
+http://forums.academy.telerik.com/comments,,\d{1,2}.second.{0,1}(?=\<)|\d{1,2}.minute.{0,1}(?=\<)|\d{0,2}.hour.{0,1}(?=\<)|(?<=points-data.{1}>)[-+0-9,]*|(?<=qa-netvote-count-data.{1}>)[-+0-9,]*
