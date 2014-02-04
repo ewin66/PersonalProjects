@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,28 +10,15 @@ namespace BrowserSpy
     {
         static void Main(string[] args)
         {
-            DDEWay myDde = new DDEWay();
-            Console.WriteLine(myDde.GetBrowserURL("firefox"));
-            Console.WriteLine();
-            Console.WriteLine(myDde.GetBrowserURL("opera"));
-            Console.WriteLine();
-            GetIEUrl();
-        }
-
-        public static void GetIEUrl()
-        {
-            SHDocVw.ShellWindows shellWindows = new SHDocVw.ShellWindows();
-            string filename;
-            foreach (SHDocVw.InternetExplorer ie in shellWindows)
+            foreach (var url in GetUrl())
             {
-                filename = Path.GetFileNameWithoutExtension(ie.FullName).ToLower();
-                if (filename.Equals("iexplore"))
-                {
-                    Console.WriteLine(ie.LocationURL.ToString());
-                }
+                Console.WriteLine(url);
             }
         }
+        public static IEnumerable<string> GetUrl()
+        {
+            DDEWay myDde = new DDEWay();
+            return myDde.GetBrowserURL("firefox").Concat(myDde.GetBrowserURL("opera")).Concat(IEWay.GetIEUrl()).Concat(ChromeWay.GetChromeUrl());
+        }
     }
-
-
 }

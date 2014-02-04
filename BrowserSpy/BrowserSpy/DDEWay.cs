@@ -8,11 +8,12 @@ using NDde.Client;
 
 namespace BrowserSpy
 {
-   public class DDEWay
+    public class DDEWay
     {
 
-        public string GetBrowserURL(string browser)
+        public List<string> GetBrowserURL(string browser)
         {
+
             try
             {
                 DdeClient dde = new DdeClient(browser, "WWW_GetWindowInfo");
@@ -20,11 +21,11 @@ namespace BrowserSpy
                 string url = dde.Request("URL", int.MaxValue);
                 string[] text = url.Split(new string[] { "\",\"" }, StringSplitOptions.RemoveEmptyEntries);
                 dde.Disconnect();
-                return text[0].Substring(1);
+                return new List<string>() { text[0].Substring(1) };
             }
             catch
             {
-                return null;
+                return new List<string>();
             }
         }
     }
