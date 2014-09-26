@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<CodeSnippet Format="1.0.0">
+<Header>
+<Title>main</Title>
+<Shortcut>main</Shortcut>
+<Description>Code snippet for class, containing the Main method</Description>
+<SnippetTypes>
+<SnippetType>Expansion</SnippetType>
+</SnippetTypes>
+</Header>
+<Snippet>
+<Declarations>
+<Literal>
+		<ID>namespace</ID>
+		<ToolTip>Namespace namespace</ToolTip>
+		<Default>MyNamespace</Default>
+</Literal>
+<Literal>
+		<ID>Program</ID>
+		<ToolTip>Program name</ToolTip>
+		<Default>Program</Default>
+</Literal>
+</Declarations>
+<Code Language="csharp"><![CDATA[namespace $namespace$
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+	public class $Program$
+    {
+        public static void Main()
+        {$end$
+        }
+    }
+}]]>
+</Code>
+</Snippet>
+</CodeSnippet>
+</CodeSnippets>
+
