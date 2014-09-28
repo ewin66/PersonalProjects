@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<CodeSnippet Format="1.0.0">
+<Header>
+<Title>singleton</Title>
+<Shortcut>singleton</Shortcut>
+<Description>Code snippet for singleton design pattern</Description>
+<SnippetTypes>
+<SnippetType>Expansion</SnippetType>
+</SnippetTypes>
+</Header>
+<Snippet>
+<Declarations>
+<Literal>
+		<ID>namespace</ID>
+		<ToolTip>Namespace namespace</ToolTip>
+		<Default>MyNamespace</Default>
+</Literal>
+<Literal>
+		<ID>Class</ID>
+		<ToolTip>Class name</ToolTip>
+		<Default>Singleton</Default>
+</Literal>
+</Declarations>
+<Code Language="csharp"><![CDATA[namespace $namespace$
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+	 public class $Class$
+    {
+        private static $Class$ instance;
+
+        protected $Class$()
+        {
+        }
+
+        public static $Class$ Instance
+        {
+            get
+			{
+				if (instance == null)
+				{
+					instance = new $Class$();
+				}
+
+				return instance;
+			}
+        }
+    }
+}]]>
+</Code>
+</Snippet>
+</CodeSnippet>
+</CodeSnippets>
+
